@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&family=Poppins:wght@700;900&display=swap');
+:root {
+    /* Color-scheme for site*/
+    --text: #130e01;
+    --background: #fffaeb;
+    --primary: #ff8400;
+    --secondary: #fff5d6;
+    --accent: #cf4307;
+
+    /* Fonts for site*/
+    --header-font: 'Poppins';
+    --body-font: 'Manrope';
+    --footer-font: 'Manrope';
+
+    /*Padding for site*/
+
+    /* Margin for site*/
+}
+
+/*************************************************************
+  start for the open and close menu for the cart
+ ************************************************************/
+html {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.listProduct .item img {
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+
+.listProduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.listProduct .item {
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.listProduct .item h2 {
+    font-weight: 500;
+    font-size: large;
+}
+
+.listProduct .item button {
+    background-color: #353432;
+    color: #eeeee6;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cartTab {
+    height: 24rem;
+    width: 24rem;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 0px 0 auto;
+    display: grid;
+    grid-template-rows: 20px 60px auto 1fr 70px;
+    transition: 0.5s;
+    margin-top: 7rem;
+    z-index: 2;
+    transform: translate(100%);
+}
+
+.cartTab h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Poppins';
+}
+
+.order-here-and-logga {
+    height: 1rem;
+}
+
+.order-here-and-logga img {
+    height: 3.5rem;
+    padding-bottom: 2.3rem;
+}
+
+body.showCart .cartTab {
+    transform: translate(0);
+}
+
+.cartTab h1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    background-color: var(--primary);
+    border-radius: 0.3rem;
+    padding: 0.4rem;
+    margin: 0.4rem;
+}
+
+.listCart {
+    margin-top: 2.5rem;
+}
+
+.cartTab .listCart .item img {
+    width: 90%;
+    filter: drop-shadow(0 1.125rem 1.25rem #0009);
+}
+
+.cartTab .listCart .item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    gap: 0.3rem;
+    text-align: center;
+    align-items: center;
+}
+
+.listCart,
+.amount,
+.name {
+    font-size: 1.1rem;
+}
+.listCart .amount span {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.listCart .amount span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+}
+
+.listCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+.listCart {
+    overflow: auto;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
+.btn-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.btn-input > div > input {
+    width: 3.1rem;
+    height: 2.1rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+}
+.order {
+    width: 6.1rem;
+    height: 2.1rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-weight: 600;
+    border: none;
+}
+
+/*************************************************************
+  start for the open and close menu style code for the navbar
+ ************************************************************/
+
+.navbar {
+    font-family: var(--header-font);
+    background: var(--background);
+    color: var(--text);
+    padding: 0.4rem;
+    margin-bottom: 0.41rem;
+}
+/*home and price in header*/
+.middle-a-links-nav {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    top: 0.5rem;
+    margin-left: 0.5rem;
+    padding: 1rem;
+}
+/*Loggan*/
+.middle-a-links-nav a img {
+    background: var(--primary);
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    z-index: 0;
+    height: 3rem;
+    top: 0.2rem;
+}
+
+.fa-xmark {
+    font-size: 1.1875rem;
+}
+.fa-solid {
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.fa-solid:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.amount-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1.1rem;
+    border: 50vh;
+    border-radius: 50%;
+    background-color: var(--accent);
+    width: 1.25rem;
+    height: 1.25rem;
+}
+.amount-cart {
+    font-size: 0.7rem;
+    color: var(--background);
+}
+.menu:hover {
+    color: var(--primary);
+}
+
+.list-style {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 1.4em;
+    margin: 0.1rem;
+}
+
+.list-style li a {
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    font-family: 'poppins';
+    text-decoration: none;
+    font-size: 1.325rem;
+    letter-spacing: 0.1rem;
+}
+
+.list-style li a:hover {
+    transition: all 0.6s ease;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.toggle-function-menu {
+    display: none;
+}
+.toggle-function-menu.open {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 480px) {
+    .toggle-function-menu.open {
+        width: 100%;
+        display: inline;
+    }
+    .list-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .cartTab {
+        height: 36rem;
+        width: 20rem;
+    }
+    .cartTab h1 {
+        font-size: 1rem;
+    }
+    h6 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+    h6 {
+        font-size: 1.2rem;
+    }
+    .toggle-function-menu.open {
+        width: 100%;
+        display: inline;
+        z-index: 10;
+    }
+    .list-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .cartTab {
+        height: 30rem;
+        width: 100%;
+    }
+    .cartTab h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 280px) {
+    .cartTab h1 {
+        font-size: 1rem;
+    }
+    .toggle-function-menu.open {
+        width: 100%;
+        display: inline;
+    }
+    .cartTab {
+        height: 30rem;
+        width: 19rem;
+        margin-right: 5%;
+    }
+    h6 {
+        font-size: 1.2rem;
+    }
+}
+/******************************************************
+  end to open and close menu style code for the navbar
+ ******************************************************/
+
+.container {
+    max-width: 100vw;
+}
+
+/* --------- HERO START --------- */
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    background-image: url('../assets/Taverna.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.hero-container {
+    display: grid;
+    place-content: center;
+}
+.hero-header {
+    text-align: center;
+    place-self: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: grid;
+    gap: 0.5rem;
+    padding-block: 0.5rem;
+    color: var(--background);
+    background-color: transparent;
+    background-color: var(--primary);
+    opacity: 90%;
+}
+.hero-header--bold {
+    font-weight: 900;
+    /* font-size: 2.5rem; */
+    font-size: clamp(2.5rem, 7vw, 4rem);
+}
+.hero-header--thin {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.hero-container {
+    display: grid;
+    text-align: center;
+    gap: 2rem;
+}
+.hero-button {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+/* --------- HERO END --------- */
+/* --------- BUTTON START --------- */
+.btn {
+    --_backgroundColor: var(--primary, #ff8400);
+    --_textColor: var(--background, #fffaeb);
+    font-weight: 500;
+    padding-inline: 2rem;
+    padding-block: 0.6rem;
+    border-radius: 50vh;
+    color: var(--_textColor);
+    background-color: var(--_backgroundColor);
+    transition: background 0.2s ease-in-out;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.btn:hover {
+    --_backgroundColor: var(--text);
+}
+.btn-primary {
+    --_backgroundColor: var(--primary);
+    --_textColor: var(--background);
+}
+.btn-paginate {
+    --_backgroundColor: var(--accent);
+    padding-inline: 1rem;
+    padding-block: 0.25rem;
+    border-radius: 0.25rem;
+}
+/* --------- BUTTON END --------- */
+/* --------- HIGHLIGHTS START -------*/
+.container-highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 5px;
+}
+
+.container-highlights > h2 {
+    font-family: var(--header-font);
+    font-size: 1.3rem;
+}
+
+.highlights-scroll {
+    display: grid;
+    grid-template-columns: repeat(6, 100%);
+    max-width: 22rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 30rem;
+    padding: 5px;
+}
+
+.highlights-content {
+    width: 20rem;
+    height: 100%;
+    transition: all ease 0.6s;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background-color: var(--secondary);
+    border-radius: 1rem;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.highlights-content > img {
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.highlights-text-info {
+    position: relative;
+}
+
+.highlights-text-info > button {
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.3rem;
+    bottom: 0.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+/* --------- HIGHLIGHTS END --------- */
+/* --------- Om oss start -------*/
+
+.container-om-oss {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: var(--header-font);
+    font-weight: 600;
+    padding: 25px;
+    max-width: 50rem;
+}
+.om-oss-h2 {
+    font-size: 1.5rem;
+}
+
+.container-omoss-info > h3 {
+    font-size: 2.5rem;
+}
+.container-omoss-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--body-font);
+}
+
+/* ------- OM OSS END ------*/
+
+/* ------- CONTACT US START ------*/
+.container-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+.input-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.container-contact-form > input {
+    padding: 5px 15px;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+}
+
+.form-disabled {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.text-input {
+    height: 5rem;
+}
+
+.btn {
+    border: 0;
+}
+textarea {
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    resize: vertical;
+}
+/* ------- CONTACT US START ------*/
+
+/* ------- FOOTER STARTS ------*/
+footer {
+    background-color: var(--text);
+}
+footer p {
+    color: var(--background);
+}
+.information,
+.support {
+    color: var(--primary);
+    padding-block: 2rem;
+    font-family: var(--body-font);
+    line-height: 2rem;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: -1;
+}
+
+.offerings {
+    color: var(--primary);
+    padding-inline: 2rem;
+    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    letter-spacing: 0.1rem;
+    font-family: var(--footer-font);
+}
+.footer-line {
+    background-color: var(--primary);
+    width: 50%;
+    margin-top: 2rem;
+    height: 0.1rem;
+}
+.some {
+    display: flex;
+    justify-content: center;
+}
+.instagram,
+.facebook {
+    margin-bottom: 2rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+/* ------- FOOTER ENDS ------ */
+
+/* CSS for menu site -- Alvin */
+.menu-header {
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.2rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.menu-cards-container {
+    margin-inline: 0.5rem;
+    padding-block: 1rem;
+    display: grid;
+    border-radius: 0.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+}
+
+.menu-card {
+    border-radius: 1rem;
+    background-color: var(--secondary);
+    padding: 0.5rem;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menu-card > img {
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.btn-add-to-cart {
+    width: 6rem;
+    height: 2rem;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.3rem;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+.paginaton-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 0.5rem;
+    margin-block: 1rem;
+}
+
+#Menu-select {
+    width: 80%;
+    padding-block: 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    text-align-last: center;
+    font-weight: 700;
+    font-family: var(--header-font);
+    letter-spacing: 5px;
+    color: black;
+}
+
+.ordercheckout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 80vh;
+    font-size: 2.5rem;
+}
+
+.ordercheckout-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vh;
+    aspect-ratio: 1/1;
+    width: 5rem;
+    background-color: #a7c957;
+}
+.ordercheckout-container > h2 {
+    font-size: 1.5rem;
+}
